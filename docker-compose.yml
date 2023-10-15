@@ -16,6 +16,7 @@ services:
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:
       - postgresql_password
+    restart: always
   db:
     container_name: db-odoo-16
     image: postgres:15.2
@@ -28,6 +29,7 @@ services:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
     secrets:
       - postgresql_password
+    restart: always      
 volumes:
   odoo-web-data:
   odoo-db-data:
